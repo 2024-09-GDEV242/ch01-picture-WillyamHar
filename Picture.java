@@ -1,21 +1,24 @@
 /**
- * This class represents a simple picture. You can draw the picture using
- * the draw method. But wait, there's more: being an electronic picture, it
- * can be changed. You can set it to black-and-white display and back to
- * colors (only after it's been drawn, of course).
- *
- * This class was written as an early example for teaching Java with BlueJ.
+ * 
+ *This is a picture of a caslte with two guards standing on top of it.
+ * 
  * 
  * @author  William Harvey
- * @version 2016.02.29
+ * @version 2024.09.10
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
+    private Square backGround;
+    private Square grass;
     private Circle sun;
-    private Person freeguy;
+    private Person manOne;
+    private Person manTwo;
+    private Square castleOne;
+    private Square castleTwo;
+    private Square stoneOne;
+    private Square stoneTwo;
+    private Triangle coneOne;
+    private Triangle coneTwo;
     private boolean drawn;
 
     /**
@@ -23,11 +26,17 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
+        backGround = new Square();
+        grass = new Square();
         sun = new Circle();
-        freeguy = new Person();
+        manOne = new Person();
+        manTwo = new Person();  
+        castleOne = new Square();
+        castleTwo = new Square();
+        stoneOne = new Square();
+        stoneTwo = new Square();
+        coneOne = new Triangle();
+        coneTwo = new Triangle();
         drawn = false;
     }
 
@@ -37,31 +46,72 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.makeVisible();
+            backGround.changeColor("blue");
+            backGround.changeSize(1000);
+            backGround.moveHorizontal(-400);
+            backGround.moveVertical(-200);
+            backGround.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
-    
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
+            grass.changeColor("green");
+            grass.moveHorizontal(-400);
+            grass.moveVertical(70);
+            grass.changeSize(1000);
+            grass.makeVisible();
+            
             sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
+            sun.moveHorizontal(-250);
+            sun.moveVertical(-120);
+            sun.changeSize(100);
             sun.makeVisible();
             
-            freeguy.moveHorizontal(50);
-            freeguy.moveVertical(30);
-            freeguy.makeVisible();
+            manOne.changeColor("yellow");
+            manOne.moveHorizontal(-125);
+            manOne.moveVertical(-125);
+            manOne.changeSize(40, 20);
+            manOne.makeVisible();
+    
+            manTwo.changeColor("yellow");
+            manTwo.moveHorizontal(30);
+            manTwo.moveVertical(-125);
+            manTwo.changeSize(40, 20);
+            manTwo.makeVisible();
+    
+            castleOne.changeColor("gray");
+            castleOne.moveHorizontal(-210);
+            castleOne.moveVertical(-40);
+            castleOne.changeSize(150);
+            castleOne.makeVisible();
+            
+            castleTwo.changeColor("gray");
+            castleTwo.moveHorizontal(-75);
+            castleTwo.moveVertical(-40);
+            castleTwo.changeSize(150);
+            castleTwo.makeVisible();
+            
+            stoneOne.changeColor("gray");
+            stoneOne.moveHorizontal(55);
+            stoneOne.moveVertical(-50);
+            stoneOne.changeSize(20);
+            stoneOne.makeVisible();
+            
+            stoneTwo.changeColor("gray");
+            stoneTwo.moveHorizontal(-210);
+            stoneTwo.moveVertical(-50);
+            stoneTwo.changeSize(20);
+            stoneTwo.makeVisible();
+            
+            coneOne.changeColor("gray");
+            coneOne.moveHorizontal(165);
+            coneOne.moveVertical(-100);
+            coneOne.changeSize(30, 30);
+            coneOne.makeVisible();
+            
+            coneTwo.changeColor("gray");
+            coneTwo.moveHorizontal(-100);
+            coneTwo.moveVertical(-100);
+            coneTwo.changeSize(30, 30);
+            coneTwo.makeVisible();
+            
             drawn = true;
         }
     }
@@ -71,10 +121,17 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
+        backGround.changeColor("white");
+        grass.changeColor("black");
         sun.changeColor("black");
+        manOne.changeColor("black");
+        manTwo.changeColor("black");
+        castleOne.changeColor("black");
+        castleTwo.changeColor("black");
+        stoneOne.changeColor("black");
+        stoneTwo.changeColor("black");
+        coneOne.changeColor("black");
+        coneTwo.changeColor("black");
     }
 
     /**
@@ -82,9 +139,16 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
+        backGround.changeColor("blue");
+        grass.changeColor("green");
         sun.changeColor("yellow");
+        manOne.changeColor("black");
+        manTwo.changeColor("black");
+        castleOne.changeColor("gray");
+        castleTwo.changeColor("gray");
+        stoneOne.changeColor("gray");
+        stoneTwo.changeColor("gray");
+        coneOne.changeColor("gray");
+        coneTwo.changeColor("gray");
     }
 }

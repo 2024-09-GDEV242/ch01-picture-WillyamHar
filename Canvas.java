@@ -143,7 +143,11 @@ public class Canvas
         else if(colorString.equals("white")) {
             graphic.setColor(Color.white);
         }
-        else {
+        else if(colorString.equals("gray")) {
+            graphic.setColor(new Color(51, 51, 51));
+        }     
+        else 
+        {
             graphic.setColor(Color.black);
         }
     }
